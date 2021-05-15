@@ -1,0 +1,40 @@
+//
+//  OrcGame.cpp
+//
+//  Created by Matt on 10/25/20.
+//  Copyright © 2020 Matt. All rights reserved.
+//
+
+#include <iostream>
+#include <string>
+#include <array>
+#include "Monster.h"
+#include "Creature.h"
+#include "Player.h"
+
+using namespace std;
+
+
+int main(){
+    
+    string Name;
+    
+    rand(); // get rid of first result
+    for (int i{0}; i < 1; i++)
+    {
+        cout << "Enter your name: ";
+        cin >> Name;
+        cout << "Welcome, " << Name << endl;
+        Player P (Name, '@' , 10 , 1 , 0 , 1);
+        while(!P.isDead() && !P.hasWon()){
+        fightMonster(P);
+        }
+        
+        if(P.hasWon())
+        {
+            cout << "You won the game with " << P.getGold() << " gold!\n";
+        }
+    }
+    return 0;
+}
+
