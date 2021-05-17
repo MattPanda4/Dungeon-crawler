@@ -18,7 +18,7 @@ using namespace std;
 int main(){
     
     string Name;
-    
+    srand(static_cast<unsigned int>(time(nullptr))); //set initial seed value to system clock
     rand(); // get rid of first result
     for (int i{0}; i < 1; i++)
     {
